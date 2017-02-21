@@ -14,7 +14,11 @@ class TweetsController < ApplicationController
         format.html do
           render html: "<li class='tweet'> <p> #{@tweet.message} </p> </li>".html_safe
         end
-      end
+        format.json do
+          render json: @tweet
+        end
+       end
+
 
     else
       if @tweet.save

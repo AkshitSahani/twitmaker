@@ -9,10 +9,11 @@ $(document).ready(function(){
     // url: $(this).attr('action'),
     url: $(this).attr('action'),
     method: $(this).attr('method'),
-    data: $(this).serialize()
+    data: $(this).serialize(),
+    dataType: 'json'
   }).done(function(data){
     console.log(data);
-    $('.tweets').prepend(data);
+    $('.tweets').prepend(data.message);
   });
  })
 })
