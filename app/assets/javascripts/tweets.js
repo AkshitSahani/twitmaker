@@ -13,6 +13,10 @@ $(document).ready(function(){
   }).done(function(data){
     console.log(data);
     $('.tweets').prepend(data);
+
+    $('#tweet_message').val('');
+
+    $('#create-tweet').removeProp('disabled');
   });
  })
 })
